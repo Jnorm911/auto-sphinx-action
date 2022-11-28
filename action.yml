@@ -1,40 +1,35 @@
-# https://help.github.com/en/articles/metadata-syntax-for-github-actions
-name: 'Sphinx to GitHub Pages'
-description: 'GitHub Action to deploy Sphinx documentation to GitHub Pages'
-author: 'Shengyu Zhang'
+name: "Sphinx to GitHub Pages"
+description: "GitHub Action to deploy Sphinx documentation to GitHub Pages"
+author: "Shengyu Zhang, Josh Norman"
 branding:
-  color: 'green'
-  icon: 'upload-cloud'
+   color: "green"
+   icon: "upload-cloud"
 inputs:
-  documentation_path:
-    description: 'Relative path under $repository_path to documentation source files'
-    required: false
-    default: './docs'
-  target_branch:
-    description: 'Git branch where Github Pages will be deployed'
-    required: false
-    default: 'gh-pages'
-  target_path:
-    description: 'Path in Github Pages where Sphinx Pages will be placed'
-    required: false
-    default: '.'
-  repository_path:
-    description: 'Relative path under $GITHUB_WORKSPACE to place the repository'
-    required: false
-    default: '.'
-  requirements_path:
-    description: 'Relative path under $repository_path to pip requirements file'
-    required: false
-    default: './requirements.txt'
-  sphinx_version:
-    description: 'Version of Sphinx'
-    required: false
-    default: ''
-  sphinx_options:
-    description: 'Additional Sphinx options'
-    required: false
-    default: ''
+   documentation_path:
+      description: "Relative path under $repository_path to documentation source files"
+      required: false
+      default: "./docs"
+   target_branch:
+      description: "Git branch where Github Pages will be deployed"
+      required: false
+      default: "gh-pages"
+   target_path:
+      description: "Path in Github Pages where Sphinx Pages will be placed"
+      required: false
+      default: "."
+   repository_path:
+      description: "Relative path under $GITHUB_WORKSPACE to place the repository"
+      required: false
+      default: "."
+   sphinx_version:
+      description: "Version of Sphinx"
+      required: false
+      default: ""
+   sphinx_options:
+      description: "Additional Sphinx options"
+      required: false
+      default: ""
 
 runs:
-  using: 'node12'
-  main: 'main.js'
+   using: "node16"
+   main: "main.js"
